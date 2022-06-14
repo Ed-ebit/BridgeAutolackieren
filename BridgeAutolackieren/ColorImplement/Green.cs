@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BridgeAutolackieren
+namespace BridgeAutolackieren.ColorImplement
 {
-    public class Blue : IColor
+    public class Green : IColor
     {
         public string ApplyColor()
         {
-            return "blue";
+            return "green";
         }
     }
 }

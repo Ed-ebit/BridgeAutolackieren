@@ -1,4 +1,7 @@
-﻿namespace BridgeAutolackieren
+﻿using BridgeAutolackieren.CarAbstraction;
+using BridgeAutolackieren.ColorImplement;
+
+namespace BridgeAutolackieren
 {
     class Program
     {
