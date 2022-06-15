@@ -10,6 +10,8 @@ namespace BridgeAutolackieren.CarAbstraction
     public abstract class Kar
     {
         public IColor _color;
-        public abstract void PaintCar();
+        //public abstract string ChooseCar();
+        public string make;
+
     }
 }

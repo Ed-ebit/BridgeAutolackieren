@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BridgeAutolackieren.CarAbstraction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,12 @@ namespace BridgeAutolackieren.CarBuilder
 {
     public class FinalCar
     {
-        private string make;
-        private string color;
+        private Kar make; //{ get; }
+        private IColor color {get;}
 
-        private FinalCar(string make, string color)
+        private FinalCar(Kar make, IColor color)
         {
-            this.make = make;
+            this.make = make; 
             this.color = color;
         }   
 
@@ -24,12 +25,16 @@ namespace BridgeAutolackieren.CarBuilder
 
         public class FinalCarBuilder
         {
-            private string make;
-            private string color;
-            public FinalCarBuilder SetProperties(string make, string color)
+            private Kar make;
+            private IColor color;
+            public FinalCarBuilder SetColor(IColor color)
+            {
+                this.color = color;
+                return this;
+            }
+            public FinalCarBuilder SetMake(Kar make)
             {
                 this.make = make;
-                this.color = color;
                 return this;
             }
             public FinalCar Build()

@@ -9,9 +9,6 @@ namespace BridgeAutolackieren
 {
     public class CarVolvo : Kar
     {
-        public override void PaintCar()
-        {
-            Console.WriteLine("Volvo has been painted in Color: " + _color.ApplyColor());
-        }
+        public string make = "Volvo";
     }
 }

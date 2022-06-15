@@ -1,5 +1,6 @@
 ﻿using BridgeAutolackieren.CarAbstraction;
 using BridgeAutolackieren.ColorImplement;
+using BridgeAutolackieren.CarBuilder;
 
 namespace BridgeAutolackieren
 {
@@ -7,21 +8,22 @@ namespace BridgeAutolackieren
     {
         public static void Main()
         {
-            IColor color = null;
-            Kar car = null;
+            //    IColor color = null;
+            //    Kar car = null;
+            var finalcarbuilder = FinalCar.Builder();
             Console.WriteLine("Bitte Farbe wählen:\n" +
                 "1. rot, 2. blau, 3. grün");
             string choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
-                    color = new Red();
+                    finalcarbuilder.SetColor(new Red());
                     break;
                 case "2":
-                    color = new Blue();
+                    finalcarbuilder.SetColor(new Blue());
                     break;
                 case "3":
-                    color = new Green();
+                    finalcarbuilder.SetColor(new Green());
                     break;
 
                 default: 
@@ -29,27 +31,29 @@ namespace BridgeAutolackieren
                     break;
             }
 
-            Console.WriteLine("Bitte Auto wählen:\n" +
+            Console.WriteLine("Bitte AutoMarke wählen:\n" +
                 "1. Lada, 2. Volvo, 3. Mercedes");
             choice = Console.ReadLine();
             switch (choice)
             {
                 case "1":
-                    car = new CarLada();
+                    finalcarbuilder.SetMake(new CarLada());
                     break;
                 case "2":
-                    car = new CarVolvo();
+                    finalcarbuilder.SetMake(new CarMercedes());
                     break;
                 case "3":
-                    car = new CarMercedes();
+                    finalcarbuilder.SetMake(new CarVolvo());
                     break;
 
                 default:
                     Console.WriteLine("ungültig");
                     break;
             }
-            car._color = color;
-            car.PaintCar();
+            finalcarbuilder.Build();
+            //car._color = color;
+            //car.ChooseCar();
+            Console.WriteLine(" Ihr Auto wird gebaut, Marke: "+ FinalCar.make.make);
 
         }
     }
