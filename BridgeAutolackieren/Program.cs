@@ -8,8 +8,6 @@ namespace BridgeAutolackieren
     {
         public static void Main()
         {
-            //    IColor color = null;
-            //    Kar car = null;
             var finalcarbuilder = FinalCar.Builder();
             Console.WriteLine("Bitte Farbe wählen:\n" +
                 "1. rot, 2. blau, 3. grün");
@@ -50,10 +48,9 @@ namespace BridgeAutolackieren
                     Console.WriteLine("ungültig");
                     break;
             }
-            finalcarbuilder.Build();
-            //car._color = color;
-            //car.ChooseCar();
-            Console.WriteLine(" Ihr Auto wird gebaut, Marke: "+ FinalCar.make.make);
+            var finalcar = finalcarbuilder.Build();
+            Console.WriteLine(" Ihr Auto wird gebaut, \nMarke: "+ finalcar.make.ChosenMake()+
+                "\nFarbe: "+finalcar.color.ApplyColor());
 
         }
     }

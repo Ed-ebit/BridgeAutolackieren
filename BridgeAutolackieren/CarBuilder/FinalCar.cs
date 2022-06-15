@@ -9,8 +9,8 @@ namespace BridgeAutolackieren.CarBuilder
 {
     public class FinalCar
     {
-        private Kar make; //{ get; }
-        private IColor color {get;}
+        public Kar make; //{ get; }
+        public IColor color; //{get;}
 
         private FinalCar(Kar make, IColor color)
         {

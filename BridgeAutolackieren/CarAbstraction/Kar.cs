@@ -9,9 +9,8 @@ namespace BridgeAutolackieren.CarAbstraction
 {
     public abstract class Kar
     {
-        public IColor _color;
-        //public abstract string ChooseCar();
-        public string make;
+        //public IColor _color;
+        public abstract string ChosenMake();
 
     }
 }

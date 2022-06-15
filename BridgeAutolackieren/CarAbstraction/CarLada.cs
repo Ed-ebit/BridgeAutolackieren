@@ -9,6 +9,11 @@ namespace BridgeAutolackieren
 {
     public class CarLada : Kar
     {
-        public string make = "Lada";
+        public override string ChosenMake()
+        {
+            return "Lada";
+        }
+
+       
     }
 }
